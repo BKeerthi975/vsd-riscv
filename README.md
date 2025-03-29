@@ -1,8 +1,6 @@
 ## VSDSquadron Mini RISC-V Internship  
 
-I am currently enrolled in the **VSDSquadron Mini RISC-V and VLSI Embedded Internship**, where I’m gaining hands-on experience with **RISC-V architecture, chip design, and industry-standard VLSI workflows**.  
-
-This program focuses on **real-world applications in AI, IoT, and robotics**, helping me develop skills that are highly valued in the semiconductor industry.  
+I have enrolled in the **VSDSquadron Mini RISC-V and VLSI Embedded Internship**, where I’m gaining hands-on experience with **RISC-V architecture, chip design, and industry-standard VLSI workflows**. Instructed by Kunal Ghosh sir.
 
 
 # About Me  
@@ -17,5 +15,6 @@ This program focuses on **real-world applications in AI, IoT, and robotics**, he
 ## *TASK 1:
 Installed all necessary applications and done with c based and risc-v based lab
 
-
+## *TASK 2:
+Compiled a c code and risc-v objdump optimization is done 
 
