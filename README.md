@@ -18,3 +18,7 @@ Installed all necessary applications and done with c based and risc-v based lab
 ## *TASK 2:
 Compiled a c code and risc-v objdump optimization is done 
 
+## *TASK 3:
+learnt how to decode different instructions present in riscv-objdump which has 15 instructions
+
+
