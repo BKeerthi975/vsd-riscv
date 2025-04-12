@@ -1,6 +1,6 @@
 ## VSDSquadron Mini RISC-V Internship  
 
-I have enrolled in the **VSDSquadron Mini RISC-V and VLSI Embedded Internship**, where I’m gaining hands-on experience with **RISC-V architecture, chip design, and industry-standard VLSI workflows**. Instructed by Kunal Ghosh sir.
+This is based on RISC-V architecture and we use all open source available, where I’m gaining hands-on experience with **RISC-V architecture, chip design, and industry-standard VLSI workflows**. Instructed by Kunal Ghosh sir.
 
 
 # About Me  
