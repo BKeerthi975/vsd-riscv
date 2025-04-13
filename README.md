@@ -11,9 +11,16 @@ This is based on RISC-V architecture and we use all open source available, where
 - **GitHub:** https://github.com/BKeerthi975  
 - **LinkedIn:** https://www.linkedin.com/in/b-keerthi-245449332/
 
+<details>
+<summary><strong>Task 1:</strong> Task is to install all the essential tools required for this internship such as Ubuntu on VMBox, GNU Toolchain, GTKWave, Yosys and Verilog simulator</summary>
 
-## *TASK 1:
-Installed all necessary applications and done with c based and risc-v based lab
+### 1. Install Ubuntu 20.04 LTS on Oracle Virtual Machine Box
+
+![Ubuntu Installation Screenshot](images/Screenshot.png)
+
+</details>
+
+
 
 ## *TASK 2:
 Compiled a c code and risc-v objdump optimization is done 
