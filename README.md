@@ -17,6 +17,10 @@ This is based on RISC-V architecture and we use all open source available, where
 ### 1. Install RISC-V toolchain using vdi file provided
 ![file-list](https://github.com/user-attachments/assets/fa9673e4-13b9-4bcd-9cbc-4933813ff5da)
 
+### 2. C Program based lab
+we have to follow these steps given below to perform this lab
+1. Open the terminal and then open leafpad which is editor to save a c program file with name sum1ton.c
+   leafpad sum1ton.c&
 
 
 </details>
