@@ -15,8 +15,8 @@ This is based on RISC-V architecture and we use all open source available, where
 <summary><strong>Task 1:</strong> Task is to install RISC-V toolchain from provided vdi and perform lab using C program and RISC-V lab</summary>
 
 ### 1. Install RISC-V toolchain using vdi file provided
+![file-list](https://github.com/user-attachments/assets/fa9673e4-13b9-4bcd-9cbc-4933813ff5da)
 
-![File List Screenshot](file-list.png)
 
 
 </details>
