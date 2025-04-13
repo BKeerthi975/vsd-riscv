@@ -12,11 +12,12 @@ This is based on RISC-V architecture and we use all open source available, where
 - **LinkedIn:** https://www.linkedin.com/in/b-keerthi-245449332/
 
 <details>
-<summary><strong>Task 1:</strong> Task is to install all the essential tools required for this internship such as Ubuntu on VMBox, GNU Toolchain, GTKWave, Yosys and Verilog simulator</summary>
+<summary><strong>Task 1:</strong> Task is to install RISC-V toolchain from provided vdi and perform lab using C program and RISC-V lab</summary>
 
-### 1. Install Ubuntu 20.04 LTS on Oracle Virtual Machine Box
+### 1. Install RISC-V toolchain using vdi file provided
 
-![Ubuntu Installation Screenshot](images/Screenshot.png)
+![File List Screenshot](file-list.png)
+
 
 </details>
 
