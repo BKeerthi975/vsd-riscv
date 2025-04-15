@@ -30,7 +30,7 @@ gcc sum1ton.c
 ./a.out
 ```
 ![WhatsApp Image 2025-03-24 at 23 13 36 (1)](https://github.com/user-attachments/assets/d7018c2e-c65c-4be1-b009-92a6de2c0389)
-![WhatsApp Image 2025-03-24 at 23 13 36 (1)](https://github.com/user-attachments/assets/62b77ba7-7fef-4b3c-b3d0-e7a9dbe05872)
+![image](https://github.com/user-attachments/assets/40dd2e03-0984-498a-80ec-a0d92f2d749d)
 
 ### 3. RISC-V Lab
 Follow these commends
