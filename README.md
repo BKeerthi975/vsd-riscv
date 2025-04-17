@@ -115,7 +115,6 @@ For -Ofast getting below shown
 RISC-V is an open-source instruction set architecture (ISA) that empowers developers to design and build processors tailored to specific applications—without the burden of licensing fees. It stands out from proprietary ISAs by offering a flexible and free alternative, making it a popular choice for academic research, startups, and large-scale industrial designs alike.
 
 Rooted in the principles of Reduced Instruction Set Computing (RISC), RISC-V represents the fifth generation of this streamlined computing architecture. Its simplicity and modular design make it both powerful and efficient, ideal for modern computing needs—from embedded systems to supercomputers.
-
 2. Instruction Format in RISC-V
 
 In any processor architecture, the instruction format defines how a machine-level instruction is structured. In RISC-V, instructions are represented in binary (a sequence of 0s and 1s) and each part of the instruction carries specific information—such as what operation to perform, which registers to use, and how data should be processed or moved.
