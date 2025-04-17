@@ -275,4 +275,81 @@ The J-type instructions are often used to perform jump to the desired memory loc
 
 </details>
 
+<details>
+<summary><strong>Task 4:</strong> Task is to make use of RISCV Core: Verilog Netlist and Testbench, perform an experiment of Functional Simulation and observe the waveforms</summary>
+
+we will use the Verilog Code and Testbench of RISCV that has already been designed. The reference GitHub repository is : iiitb_rv32i
+
+### Steps to perform functional simulation of RISCV
+1.Create a new directory with your name mkdir <your_name>
+
+2.Create two files by using touch command as keerthi_rv32i.v and keerthi_rv32i_tb.v
+
+3.Copy the code from the reference github repo and paste it in your verilog and testbench files
+
+4.To run and simulate the verilog code, enter the following command:
+
+```bash
+$ iverilog -o iiitb_rv32i keerthi_rv32i.v keerthi_rv32i_tb.v
+$ ./iiitb_rv32i
+```
+
+5.To see the simulation waveform in GTKWave, enter the following command:
+```bash
+$ gtkwave iiitb_rv32i.vcd
+```
+
+6.The GTKWave will be opened and following window will be appeared
+![image](https://github.com/user-attachments/assets/d101e74c-e39c-4507-a0a9-f4d5346fb36c)
+
+As shown in the figure below, all the instructions in the given verilog file is hard-coded. Hard-coded means that instead of following the RISCV specifications bit pattern, the designer has hard-coded each instructions based on their own pattern. Hence the 32-bits instruction that we generated in Task-2 will not match with the given instruction.
+
+![image](https://github.com/user-attachments/assets/713b456e-d112-45e8-80ef-1325194bc23a)
+
+### Difference Between Standard RISC-V ISA and Hardcoded ISA
+
+| **Operation**           | **Standard RISC-V ISA** | **Hardcoded ISA (Reference Repo)** |
+|-------------------------|-------------------------|-------------------------------------|
+| `ADD R6, R2, R1`        | `32'h00110333`          | `32'h02208300`                      |
+| `SUB R7, R1, R2`        | `32'h402083b3`          | `32'h02209380`                      |
+| `AND R8, R1, R3`        | `32'h0030f433`          | `32'h0230a400`                      |
+| `OR R9, R2, R5`         | `32'h005164b3`          | `32'h02513480`                      |
+| `XOR R10, R1, R4`       | `32'h0040c533`          | `32'h0240c500`                      |
+| `SLT R1, R2, R4`        | `32'h0045a0b3`          | `32'h02415580`                      |
+| `ADDI R12, R4, 5`       | `32'h004120b3`          | `32'h00520600`                      |
+| `BEQ R0, R0, 15`        | `32'h00000f63`          | `32'h00f00002`                      |
+| `SW R3, R1, 2`          | `32'h0030a123`          | `32'h00209181`                      |
+| `LW R13, R1, 2`         | `32'h0020a683`          | `32'h00208681`                      |
+| `SRL R16, R14, R2`      | `32'h0030a123`*         | `32'h00271803`                      |
+| `SLL R15, R1, R2`       | `32'h002097b3`          | `32'h00208783`                      |
+
+Analysing the Output Waveform of various instructions that we have covered in TASK-2
+
+Instruction 1: ADD 
+![image](https://github.com/user-attachments/assets/02ad32af-307a-449d-a304-0f738a652c86)
+
+Instruction 2: SUB
+![image](https://github.com/user-attachments/assets/4e7e4c31-78b2-4daf-82dc-f7f650ac18aa)
+
+Instruction 3: AND 
+![image](https://github.com/user-attachments/assets/4e44c9fa-e158-428a-89f4-c0052a217e79)
+
+Instruction 4: OR 
+![image](https://github.com/user-attachments/assets/8b064f4d-be8a-4cf5-a6f2-f5d45b80e3d8)
+
+Instruction 5: XOR 
+![image](https://github.com/user-attachments/assets/5ecd0f7c-e43f-446c-b2f3-d5448cf07c1b)
+
+Instruction 6: SLT
+![image](https://github.com/user-attachments/assets/d8293ca4-5533-4396-86cc-cd2f3be1411c)
+
+Instruction 7: ADDI 
+![image](https://github.com/user-attachments/assets/5d2bafa3-89a6-4233-b1a9-b8bd7d251256)
+
+Instruction 8: BEQ 
+![image](https://github.com/user-attachments/assets/0d82b2b5-5b91-4575-a6f8-c04e1dcffd15)
+
+
+
+
 
