@@ -71,9 +71,11 @@ riscv64-unknown-elf-objdump -d sum1ton.o
 <details>
 <summary><strong>Task 2:</strong> Task is to perform SPIKE Simulation and Compile C program code and generate RISC-V objdump for both -O1 and -Ofast</summary>
 1.WHAT IS SPIKE IN RISC-V?
-        SPIKE is a simulator for the RISC-V Instruction Set Architecture (ISA). It allows developers to test and analyze RISC-V programs without needing real hardware. SPIKE is written in C++ and is open-source. It simulates a RISC-V processor along with its cache system, making it useful for running software like applications or even the Linux kernel. It's commonly used as a starting point for testing and running programs on RISC-V platforms.
+        
+SPIKE is a simulator for the RISC-V Instruction Set Architecture (ISA). It allows developers to test and analyze RISC-V programs without needing real hardware. SPIKE is written in C++ and is open-source. It simulates a RISC-V processor along with its cache system, making it useful for running software like applications or even the Linux kernel. It's commonly used as a starting point for testing and running programs on RISC-V platforms.
 
 2.Install SPIKE
+
 Using below commends we can install Spike 
 ```bash
 sudo apt update
@@ -87,12 +89,14 @@ leafpad productab.c &
 ![image](https://github.com/user-attachments/assets/8249f7a7-2bca-4930-a1f0-d97f8a6601e3)
 
 4.Images showing RISC-V objdunp for -O1 and -Ofast 
+
 For -O1 
 ![image](https://github.com/user-attachments/assets/46579fba-b194-4021-8a1a-19beb9504db7)
 For -Ofast
 ![image](https://github.com/user-attachments/assets/09e9f7cd-d0d4-4afa-b543-e6295d3561a0)
 
 5.Images having 15 instruction for -O1 and 12 for -Ofast
+
 For -O1 getting below shown 
 ![image](https://github.com/user-attachments/assets/c3354d96-3cbb-4ca4-b755-8a956a5b2e0a)
 For -Ofast getting below shown
