@@ -92,6 +92,7 @@ leafpad productab.c &
 
 For -O1 
 ![image](https://github.com/user-attachments/assets/46579fba-b194-4021-8a1a-19beb9504db7)
+
 For -Ofast
 ![image](https://github.com/user-attachments/assets/09e9f7cd-d0d4-4afa-b543-e6295d3561a0)
 
@@ -99,6 +100,7 @@ For -Ofast
 
 For -O1 getting below shown 
 ![image](https://github.com/user-attachments/assets/c3354d96-3cbb-4ca4-b755-8a956a5b2e0a)
+
 For -Ofast getting below shown
 ![image](https://github.com/user-attachments/assets/e4b80a86-579b-497d-9509-18c291310f50)
 
