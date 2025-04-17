@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/94fab420-2486-406a-995c-88548df4278f)## VSDSquadron Mini RISC-V Internship  
+## VSDSquadron Mini RISC-V Internship  
 
 This is based on RISC-V architecture and we use all open source available, where I’m gaining hands-on experience with **RISC-V architecture, chip design, and industry-standard VLSI workflows**. Instructed by Kunal Ghosh sir.
 
