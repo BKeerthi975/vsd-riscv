@@ -70,10 +70,3 @@ riscv64-unknown-elf-objdump -d sum1ton.o
 
 
 
-## *TASK 2:
-Compiled a c code and risc-v objdump optimization is done 
-
-## *TASK 3:
-learnt how to decode different instructions present in riscv-objdump which has 15 instructions
-
-
