@@ -465,3 +465,33 @@ int main()
     }
 }
 ```
+### Code explation
+Code Breakdown:
+1.Header Files:
+#include <ch32v003fun.h>: This header file includes the necessary functions for the CH32V003 microcontroller, including GPIO, ADC, and delay functions.
+
+2.Pin Definitions:
+LDR_PIN: Defined as GPIO_Pin_1 (connected to PA1, ADC channel 1), where the LDR sensor is connected to measure light intensity.
+LED_PIN: Defined as GPIO_Pin_2 (connected to PA2), which controls the LED for the night light.
+
+3.setup_adc() Function:
+Configures the ADC (Analog-to-Digital Converter) to read from PA1 (LDR pin). The ADC is set up to use the internal reference voltage and the LDR's analog signal will be converted to a digital value.
+
+4.The RCC_APB2PeriphClockCmd function enables the clock for ADC1 and GPIOA, allowing their use.
+
+5.The GPIO_InitTypeDef structure is used to configure the LDR pin (PA1) as an analog input.
+
+6.read_adc() Function:
+Sets the sampling time for ADC readings and starts the conversion by setting ADC_SWSTART.
+The function waits until the ADC conversion is complete (when the EOC flag is set).
+The ADC result is read from ADC1->RDATAR and returned as a 16-bit value.
+
+7.Main Function:
+The main function initializes the system and the delay function.
+The LED pin (PA2) is initialized as an output pin, set to push-pull mode.
+The ADC is set up for reading the LDR.
+The program enters a while(1) loop where it continuously:
+Reads the ADC value of the LDR.
+If the LDR value is below a defined threshold (1000 in this case), the LED is turned ON (GPIO_ResetBits(GPIOA, LED_PIN)).
+If the LDR value is above the threshold, the LED is turned OFF (GPIO_SetBits(GPIOA, LED_PIN)).
+A 200 ms delay is added for smooth operation.
