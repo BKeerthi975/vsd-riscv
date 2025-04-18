@@ -350,6 +350,118 @@ Instruction 8: BEQ
 ![image](https://github.com/user-attachments/assets/0d82b2b5-5b91-4575-a6f8-c04e1dcffd15)
 
 
+</details>
 
+<details>
+<summary><strong>Task 5:</strong> Task is to provide details of the project </summary>
 
+### LDR-based Automatic Night Light 
 
+### Overview
+The LDR-based Automatic Night Light project demonstrates an intelligent lighting system that utilizes a Light Dependent Resistor (LDR) in combination with the CH32V003 RISC-V processor on the VSDMini Quadron board. This project automatically turns on an LED in low-light conditions and switches it off when sufficient ambient light is detected. The LDR continuously senses the light intensity, and based on the analog value converted to digital using a comparator or GPIO input logic, the CH32V003 controls the LED accordingly. This smart lighting system is highly energy-efficient and eliminates the need for manual operation, making it ideal for night lamps, street lights, and hallway lights.
+
+### Components Required
+1.VSDMini Quadron (CH32V003x) board
+2.LDR (Light Dependent Resistor)
+3.10kΩ Resistor
+4.LED
+5.Jumper wires
+6.Breadboard
+7.Power Supply (5V USB-C or regulated 3.3V)
+
+### Working Principle
+An LDR (Light Dependent Resistor) changes its resistance based on the ambient light:
+1.In bright light, its resistance is low.
+2.In darkness, its resistance is high.
+
+This property is used in a voltage divider circuit with a fixed resistor (typically 10kΩ). The voltage across the fixed resistor increases when the LDR is in the dark, and this voltage is sensed using a GPIO pin configured as a digital input on the CH32V003. Based on the input:
+1.If it’s dark, the microcontroller turns ON the LED.
+2.If it’s bright, the microcontroller turns OFF the LED.
+
+### Circuit Connection for Night Light
+Voltage Divider Setup:
+One end of LDR → VCC (3.3V)
+Other end of LDR → GPIO Input Pin (D3) and one end of 10kΩ Resistor
+Other end of 10kΩ Resistor → GND
+
+LED Setup:
+Anode (+) of LED → GPIO Output Pin (D6) (through 330Ω resistor)
+Cathode (–) of LED → GND
+
+This setup lets the GPIO input pin (D3) read a high or low signal depending on light intensity, while D6 controls the LED output.
+
+### Pin Connection Table
+
+| Component   | Pin on VSDMini (CH32V003x) |
+|-------------|-----------------------------|
+| LDR Output  | D3                          |
+| LED Anode   | D6                          |
+| GND         | GND                         |
+| VCC (3.3V)  | VIN                         |
+
+### How to do
+
+```bash
+
+#include <ch32v003fun.h>
+
+#define LDR_PIN     GPIO_Pin_1  // D3 -> PA1 (ADC_IN1)
+#define LED_PIN     GPIO_Pin_2  // D6 -> PA2
+
+void setup_adc()
+{
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1 | RCC_APB2Periph_GPIOA, ENABLE);
+
+    GPIO_InitTypeDef gpio;
+    gpio.GPIO_Pin = LDR_PIN;
+    gpio.GPIO_Mode = GPIO_Mode_AIN;
+    GPIO_Init(GPIOA, &gpio);
+
+    ADC1->CTLR2 |= ADC_EXTTRIGConv_None;
+    ADC1->CTLR2 |= ADC_ADON;
+    Delay_Ms(1);
+    ADC1->CTLR2 |= ADC_ADON;
+}
+
+uint16_t read_adc()
+{
+    ADC1->SAMPTR2 = ADC_SampleTime_239Cycles5 << ADC_Channel_1_Pos;
+    ADC1->RSQR3 = 1;
+    ADC1->CTLR2 |= ADC_SWSTART;
+    while (!(ADC1->STATR & ADC_STATR_EOC));
+    return ADC1->RDATAR;
+}
+
+int main()
+{
+    SystemInit();
+    Delay_Init();
+
+    // Setup LED pin
+    GPIO_InitTypeDef gpio_led;
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
+    gpio_led.GPIO_Pin = LED_PIN;
+    gpio_led.GPIO_Speed = GPIO_Speed_10MHz;
+    gpio_led.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_Init(GPIOA, &gpio_led);
+
+    // Setup ADC for LDR
+    setup_adc();
+
+    while (1)
+    {
+        uint16_t ldr_value = read_adc();
+
+        if (ldr_value < 1000)  // Adjust threshold as needed
+        {
+            GPIO_ResetBits(GPIOA, LED_PIN); // LED ON
+        }
+        else
+        {
+            GPIO_SetBits(GPIOA, LED_PIN);   // LED OFF
+        }
+
+        Delay_Ms(200);
+    }
+}
+```
